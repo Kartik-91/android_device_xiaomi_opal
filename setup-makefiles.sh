@@ -8,7 +8,7 @@
 
 set -e
 
-DEVICE=pissarro
+DEVICE=opal
 VENDOR=xiaomi
 
 # Load extract_utils and do some sanity checks

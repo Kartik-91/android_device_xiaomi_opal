@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/xiaomi/pissarro
+DEVICE_PATH := device/xiaomi/opal
 
 # Installs gsi keys into ramdisk, to boot a GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
@@ -22,7 +22,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
-$(call inherit-product, vendor/xiaomi/pissarro/pissarro-vendor.mk)
+$(call inherit-product, vendor/xiaomi/opal/opal-vendor.mk)
 
 PRODUCT_EXTRA_VNDK_VERSIONS := 30
 PRODUCT_SHIPPING_API_LEVEL := 30
@@ -38,11 +38,9 @@ AB_OTA_PARTITIONS += \
     dtbo \
     product \
     system \
-    system_ext \
     vbmeta \
     vbmeta_system \
-    vendor \
-    odm
+    vendor
 
 PRODUCT_PACKAGES += \
     otapreopt_script \
@@ -82,9 +80,9 @@ TARGET_SCREEN_WIDTH := 1080
 # Bootctrl
 PRODUCT_PACKAGES += \
     bootctrl.default \
-    android.hardware.boot@1.2-impl \
-    android.hardware.boot@1.2-service \
-    android.hardware.boot@1.2.recovery
+    android.hardware.boot@1.1-impl \
+    android.hardware.boot@1.1-service \
+    android.hardware.boot@1.1.recovery
 
 # Fastbootd
 PRODUCT_PACKAGES += \
@@ -118,11 +116,11 @@ PRODUCT_BOOT_JARS += \
 
 # Init
 PRODUCT_PACKAGES += \
-    init.mt6877.rc \
-    fstab.mt6877 \
-    fstab.mt6877_ramdisk
+    init.mt6833.rc \
+    fstab.mt6833 \
+    fstab.mt6833_ramdisk
 
-PRODUCT_COPY_FILES +=  $(DEVICE_PATH)/rootdir/etc/fstab.mt6877:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/30/etc/fstab.mt6877
+PRODUCT_COPY_FILES +=  $(DEVICE_PATH)/rootdir/etc/fstab.mt6833:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/30/etc/fstab.mt6833
 
 #Input
 PRODUCT_COPY_FILES += \

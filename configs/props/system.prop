@@ -10,7 +10,7 @@ persist.dbg.vt_avail_ovr=1
 #support dual wifi feature
 ro.vendor.net.enable_dual_wifi=1
 #
-# from device/xiaomi/pissarro/special_ro.prop
+# from device/xiaomi/opal/special_ro.prop
 #
 #adb
 persist.adb.notify=1
@@ -197,7 +197,7 @@ external_storage.cross_user.enabled=1
 ro.sf.lcd_density=440
 ro.treble.enabled=true
 net.bt.name=Android
-ro.product.mod_device=pissarro_in_global
+ro.product.mod_device=opal_in_global
 ro.config.ringtone=Ring_Synth_04.ogg
 ro.config.notification_sound=pixiedust.ogg
 ro.config.alarm_alert=Alarm_Classic.ogg
